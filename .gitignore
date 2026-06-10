@@ -1,0 +1,16 @@
+.vercel/
+.playwright-mcp/
+outputs/
+work/
+
+*.png
+*.jpg
+*.jpeg
+
+!site/*.png
+!site/*.jpg
+!site/*.jpeg
+!site/favicon.ico
+
+node_modules/
+npm-debug.log*
