@@ -1,5 +1,7 @@
 # Corvette Store
 
+Autodeploy verification note: GitHub -> Vercel integration connected.
+
 Стартовый каркас сайта магазина оригинальной брендовой одежды `Corvette Store`.
 
 ## Что внутри
