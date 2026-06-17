@@ -1,5 +1,4 @@
 const topbar = document.getElementById("topbar");
-const productCards = document.querySelectorAll(".product-card");
 const revealBlocks = document.querySelectorAll(".reveal-on-scroll");
 const catalogSections = document.querySelectorAll("[data-catalog-section]");
 const modal = document.getElementById("product-modal");
@@ -133,42 +132,6 @@ function setupScrollReveal() {
   revealBlocks.forEach((block) => observer.observe(block));
 }
 
-function setupProductTilt() {
-  productCards.forEach((card) => {
-    const image = card.querySelector(".product-card-media img");
-
-    if (!image) {
-      return;
-    }
-
-    const resetTilt = () => {
-      image.style.setProperty("--img-rotate-x", "0deg");
-      image.style.setProperty("--img-rotate-y", "0deg");
-      image.style.setProperty("--img-shift-x", "0px");
-      image.style.setProperty("--img-shift-y", "0px");
-    };
-
-    card.addEventListener("pointermove", (event) => {
-      const bounds = card.getBoundingClientRect();
-      const px = (event.clientX - bounds.left) / bounds.width;
-      const py = (event.clientY - bounds.top) / bounds.height;
-      const rotateY = (px - 0.5) * 14;
-      const rotateX = (0.5 - py) * 14;
-      const shiftX = (px - 0.5) * 14;
-      const shiftY = (py - 0.5) * 12;
-
-      image.style.setProperty("--img-rotate-x", `${rotateX.toFixed(2)}deg`);
-      image.style.setProperty("--img-rotate-y", `${rotateY.toFixed(2)}deg`);
-      image.style.setProperty("--img-shift-x", `${shiftX.toFixed(2)}px`);
-      image.style.setProperty("--img-shift-y", `${shiftY.toFixed(2)}px`);
-    });
-
-    card.addEventListener("pointerleave", resetTilt);
-    card.addEventListener("pointercancel", resetTilt);
-    card.addEventListener("blur", resetTilt, true);
-  });
-}
-
 function setupCatalogStates() {
   catalogSections.forEach((section) => {
     const grid = section.querySelector("[data-catalog-grid]");
@@ -192,9 +155,19 @@ function buildModalSpecs(specs) {
     return;
   }
 
-  modalSpecs.innerHTML = specs
-    .map(([label, value]) => `<div><dt>${label}</dt><dd>${value}</dd></div>`)
-    .join("");
+  modalSpecs.replaceChildren();
+
+  specs.forEach(([label, value]) => {
+    const row = document.createElement("div");
+    const term = document.createElement("dt");
+    const description = document.createElement("dd");
+
+    term.textContent = label;
+    description.textContent = value;
+
+    row.append(term, description);
+    modalSpecs.append(row);
+  });
 }
 
 function buildModalThumbs(product) {
@@ -204,15 +177,24 @@ function buildModalThumbs(product) {
 
   const gallery = product.gallery && product.gallery.length ? product.gallery : [product.image];
 
-  modalThumbs.innerHTML = gallery
-    .map(
-      (image, index) => `
-        <button class="product-thumb${index === 0 ? " is-active" : ""}" type="button" data-modal-image="${image}">
-          <img src="${image}" alt="${product.title} view ${index + 1}">
-        </button>
-      `
-    )
-    .join("");
+  modalThumbs.replaceChildren();
+
+  gallery.forEach((image, index) => {
+    const button = document.createElement("button");
+    const preview = document.createElement("img");
+
+    button.type = "button";
+    button.className = `product-thumb${index === 0 ? " is-active" : ""}`;
+    button.dataset.modalImage = image;
+
+    preview.src = image;
+    preview.alt = `${product.title} view ${index + 1}`;
+    preview.loading = "lazy";
+    preview.decoding = "async";
+
+    button.append(preview);
+    modalThumbs.append(button);
+  });
 
   modalThumbs.querySelectorAll("[data-modal-image]").forEach((button) => {
     button.addEventListener("click", () => {
@@ -298,7 +280,6 @@ function setupTelegramLinks() {
 revealPage();
 updateTopbarState();
 setupScrollReveal();
-setupProductTilt();
 setupCatalogStates();
 setupProductModal();
 setupTelegramLinks();
