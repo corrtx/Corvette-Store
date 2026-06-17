@@ -75,6 +75,7 @@ body.modal-open {
   place-items: center;
   min-width: 180px;
   min-height: 52px;
+  isolation: isolate;
 }
 
 .topbar-wordmark,
@@ -108,6 +109,8 @@ body.modal-open {
   opacity: 0;
   transform: translateY(6px) scale(0.98);
   pointer-events: none;
+  mix-blend-mode: multiply;
+  filter: saturate(0.96) contrast(0.98) drop-shadow(0 3px 10px rgba(17, 17, 17, 0.08));
 }
 
 .topbar.is-car .topbar-wordmark {
@@ -438,8 +441,9 @@ body.modal-open {
 }
 
 .product-card-media img {
-  width: 100%;
-  max-width: 520px;
+  width: auto;
+  max-width: 100%;
+  max-height: 100%;
   height: auto;
   display: block;
   transform-origin: center;
@@ -669,10 +673,11 @@ body.modal-open {
 
 .product-modal-main img {
   max-width: 100%;
-  max-height: 560px;
+  max-height: min(72vh, 720px);
   width: auto;
   height: auto;
   display: block;
+  object-fit: contain;
 }
 
 .product-modal-thumbs {
@@ -700,7 +705,9 @@ body.modal-open {
 
 .product-thumb img {
   max-width: 100%;
-  max-height: 90px;
+  max-height: 100%;
+  width: auto;
+  height: auto;
   display: block;
 }
 
@@ -907,6 +914,7 @@ body.modal-open {
   .topbar-car {
     width: 64px;
     max-width: 18vw;
+    filter: saturate(0.96) contrast(0.98) drop-shadow(0 2px 8px rgba(17, 17, 17, 0.06));
   }
 
   .landing-section,
