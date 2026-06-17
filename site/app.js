@@ -110,7 +110,12 @@ function revealPage() {
 }
 
 function setupScrollReveal() {
-  if (!("IntersectionObserver" in window)) {
+  const shouldDisableReveal =
+    !("IntersectionObserver" in window) ||
+    window.matchMedia("(max-width: 820px)").matches ||
+    window.matchMedia("(hover: none), (pointer: coarse)").matches;
+
+  if (shouldDisableReveal) {
     revealBlocks.forEach((block) => block.classList.add("is-visible"));
     return;
   }
