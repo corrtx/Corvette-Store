@@ -928,11 +928,11 @@ body.modal-open {
     width: 56px;
     max-width: 18vw;
     filter: saturate(0.96) contrast(0.98) drop-shadow(0 2px 8px rgba(17, 17, 17, 0.06));
-    transition: opacity 320ms cubic-bezier(0.22, 1, 0.36, 1), transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+    transition: opacity 620ms cubic-bezier(0.22, 1, 0.36, 1), transform 620ms cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   .topbar-wordmark {
-    transition: opacity 320ms cubic-bezier(0.22, 1, 0.36, 1), transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+    transition: opacity 620ms cubic-bezier(0.22, 1, 0.36, 1), transform 620ms cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   .landing-section,
@@ -953,10 +953,10 @@ body.modal-open {
 
   .landing-copy h1 {
     max-width: 100%;
-    max-width: 9.6ch;
-    font-size: clamp(1.92rem, 9.6vw, 2.58rem);
-    line-height: 1.18;
-    letter-spacing: -0.03em;
+    max-width: 7.8ch;
+    font-size: clamp(2.38rem, 12.2vw, 3.26rem);
+    line-height: 1.04;
+    letter-spacing: -0.042em;
   }
 
   .topbar {
@@ -1191,10 +1191,10 @@ body.modal-open {
   }
 
   .landing-copy h1 {
-    max-width: 9.2ch;
-    font-size: clamp(1.76rem, 9vw, 2.18rem);
-    line-height: 1.22;
-    letter-spacing: -0.025em;
+    max-width: 7.4ch;
+    font-size: clamp(2.24rem, 11.8vw, 2.86rem);
+    line-height: 1.03;
+    letter-spacing: -0.038em;
   }
 
   .catalog-hero h1,
