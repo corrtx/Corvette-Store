@@ -928,11 +928,11 @@ body.modal-open {
     width: 56px;
     max-width: 18vw;
     filter: saturate(0.96) contrast(0.98) drop-shadow(0 2px 8px rgba(17, 17, 17, 0.06));
-    transition: opacity 220ms cubic-bezier(0.22, 1, 0.36, 1), transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+    transition: opacity 320ms cubic-bezier(0.22, 1, 0.36, 1), transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   .topbar-wordmark {
-    transition: opacity 220ms cubic-bezier(0.22, 1, 0.36, 1), transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+    transition: opacity 320ms cubic-bezier(0.22, 1, 0.36, 1), transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   .landing-section,
@@ -944,24 +944,6 @@ body.modal-open {
     min-height: calc(100svh - 104px);
     padding: 38px 0 42px;
     align-items: center;
-  }
-
-  .landing-copy {
-    position: relative;
-    padding: 18px 14px 16px;
-    background:
-      linear-gradient(180deg, rgba(255, 255, 255, 0.68), rgba(255, 255, 255, 0.3)),
-      rgba(251, 248, 242, 0.74);
-    border: 1px solid rgba(188, 181, 172, 0.4);
-    box-shadow: 0 18px 38px rgba(17, 17, 17, 0.06);
-  }
-
-  .landing-copy::before {
-    content: "";
-    position: absolute;
-    inset: 8px;
-    border: 1px solid rgba(17, 17, 17, 0.05);
-    pointer-events: none;
   }
 
   .catalog-hero {
@@ -1003,7 +985,6 @@ body.modal-open {
     min-height: 44px;
     padding: 0 16px;
     font-size: 0.72rem;
-    background: rgba(251, 248, 242, 0.58);
   }
 
   .landing-kicker {
@@ -1203,10 +1184,6 @@ body.modal-open {
   .landing-section {
     min-height: calc(100svh - 92px);
     padding: 32px 0 36px;
-  }
-
-  .landing-copy {
-    padding: 16px 12px 14px;
   }
 
   .product-modal-thumbs {
