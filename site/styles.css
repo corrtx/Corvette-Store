@@ -953,10 +953,10 @@ body.modal-open {
 
   .landing-copy h1 {
     max-width: 100%;
-    max-width: 7.8ch;
-    font-size: clamp(2.38rem, 12.2vw, 3.26rem);
-    line-height: 1.04;
-    letter-spacing: -0.042em;
+    max-width: 7.4ch;
+    font-size: clamp(2.28rem, 11.7vw, 3.08rem);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
   }
 
   .topbar {
@@ -1191,10 +1191,10 @@ body.modal-open {
   }
 
   .landing-copy h1 {
-    max-width: 7.4ch;
-    font-size: clamp(2.24rem, 11.8vw, 2.86rem);
-    line-height: 1.03;
-    letter-spacing: -0.038em;
+    max-width: 7ch;
+    font-size: clamp(2.14rem, 11.2vw, 2.72rem);
+    line-height: 1.04;
+    letter-spacing: -0.036em;
   }
 
   .catalog-hero h1,
