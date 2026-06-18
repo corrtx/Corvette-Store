@@ -1,5 +1,6 @@
 :root {
   --bg: #f2f1ec;
+  --header-bg: #f0efea;
   --surface: #fbf8f2;
   --surface-soft: #f7f5f0;
   --surface-deep: #efebe3;
@@ -55,13 +56,16 @@ body.modal-open {
   position: sticky;
   top: 0;
   z-index: 30;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   gap: 20px;
   min-height: 88px;
-  padding: 18px 0;
-  background: rgba(243, 241, 236, 0.94);
+  padding: 18px max(16px, calc((100vw - min(1680px, calc(100% - 32px))) / 2));
+  background: rgba(240, 239, 234, 0.94);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
 }
@@ -77,6 +81,7 @@ body.modal-open {
   min-width: 180px;
   min-height: 52px;
   isolation: isolate;
+  background: transparent;
 }
 
 .topbar-wordmark,
@@ -104,14 +109,19 @@ body.modal-open {
 }
 
 .topbar-car {
+  display: block;
   width: 84px;
   max-width: 12vw;
   height: auto;
+  object-fit: contain;
   opacity: 0;
   transform: translateY(6px) scale(0.98);
   pointer-events: none;
-  mix-blend-mode: multiply;
-  filter: saturate(0.96) contrast(0.98) drop-shadow(0 3px 10px rgba(17, 17, 17, 0.08));
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  mix-blend-mode: normal;
+  filter: drop-shadow(0 3px 10px rgba(17, 17, 17, 0.08));
 }
 
 .topbar.is-car .topbar-wordmark {
