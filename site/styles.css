@@ -972,7 +972,7 @@ body.modal-open {
   .landing-copy h1 {
     max-width: 100%;
     max-width: 9.6ch;
-    font-size: clamp(1.76rem, 8.8vw, 2.34rem);
+    font-size: clamp(1.92rem, 9.6vw, 2.58rem);
     line-height: 1.18;
     letter-spacing: -0.03em;
   }
@@ -1000,8 +1000,9 @@ body.modal-open {
 
   .landing-link {
     margin-top: 22px;
-    min-height: 40px;
-    padding: 0 14px;
+    min-height: 44px;
+    padding: 0 16px;
+    font-size: 0.72rem;
     background: rgba(251, 248, 242, 0.58);
   }
 
@@ -1214,7 +1215,7 @@ body.modal-open {
 
   .landing-copy h1 {
     max-width: 9.2ch;
-    font-size: clamp(1.58rem, 8.2vw, 2.02rem);
+    font-size: clamp(1.76rem, 9vw, 2.18rem);
     line-height: 1.22;
     letter-spacing: -0.025em;
   }
