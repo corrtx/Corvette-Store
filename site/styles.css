@@ -948,26 +948,15 @@ body.modal-open {
 
   .landing-copy h1 {
     max-width: 100%;
-    font-size: clamp(1.68rem, 8.5vw, 2.28rem);
-    line-height: 1.08;
+    max-width: 9.6ch;
+    font-size: clamp(1.76rem, 8.8vw, 2.34rem);
+    line-height: 1.18;
     letter-spacing: -0.03em;
   }
 
   .topbar {
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
-  }
-
-  .topbar-wordmark,
-  .topbar-car {
-    transition: none;
-    will-change: auto;
-  }
-
-  .topbar-car,
-  .topbar.is-car .topbar-car,
-  .topbar.is-car .topbar-wordmark {
-    transform: none;
   }
 
   .catalog-hero h1,
@@ -1183,8 +1172,9 @@ body.modal-open {
   }
 
   .landing-copy h1 {
-    font-size: clamp(1.5rem, 8vw, 1.96rem);
-    line-height: 1.16;
+    max-width: 9.2ch;
+    font-size: clamp(1.58rem, 8.2vw, 2.02rem);
+    line-height: 1.22;
     letter-spacing: -0.025em;
   }
 
