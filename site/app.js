@@ -103,9 +103,7 @@ function revealPage() {
   document.body.classList.add("page-enter");
 
   window.requestAnimationFrame(() => {
-    window.requestAnimationFrame(() => {
-      document.body.classList.add("is-ready");
-    });
+    document.body.classList.add("is-ready");
   });
 }
 
@@ -144,14 +142,13 @@ function setupCatalogStates() {
     const hasItems = grid && grid.querySelectorAll(".product-card").length > 0;
 
     section.classList.add("is-loading");
-
-    window.setTimeout(() => {
+    window.requestAnimationFrame(() => {
       section.classList.remove("is-loading");
 
       if (emptyState) {
         emptyState.hidden = hasItems;
       }
-    }, 520);
+    });
   });
 }
 
